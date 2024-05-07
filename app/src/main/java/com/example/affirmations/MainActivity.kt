@@ -11,8 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -53,7 +53,7 @@ fun AffirmationsApp(modifier: Modifier = Modifier) {
 // reusable affirmation card
 @Composable
 fun AffirmationCard(affirmationObj: Affirmation, modifier: Modifier = Modifier) {
-    OutlinedCard(modifier = modifier) {
+    Card(modifier = modifier) {
         Column {
             Image(
                 painter = painterResource(id = affirmationObj.imageResourceId),
@@ -84,13 +84,13 @@ fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Mod
             // and passes each one to the reusable AffirmationCard to be displayed in the UI
             AffirmationCard(
                 affirmationObj = oneAffirmationObj,
-                modifier = modifier.padding(8.dp)
+                modifier = modifier.padding(horizontal = 8.dp, vertical = 15.dp)
             )
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 private fun AffirmationAppPreview() {
     AffirmationsTheme {
